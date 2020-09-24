@@ -1,6 +1,6 @@
 # TypeTraitsImplementation
 
-This is `type_traits*` library implementation. Just understand the templates.
+This is just primitive `type_traits*` library implementation some of the functions did not implemented. Just understand the templates.
 
 
 
