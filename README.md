@@ -1,6 +1,6 @@
 # TypeTraitsImplementation
 
-This is `type_traits*` library implementation. Just understand the templates and compile-time type deduction functionalities. 
+This is `type_traits*` library implementation. Just understand the templates.
 
 
 
