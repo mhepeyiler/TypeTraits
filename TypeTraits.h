@@ -72,6 +72,7 @@ namespace TT {
 	template<typename T>
 	constexpr bool IsVolatile_v = IsVolatile<T>::value;
 
+	/***********************************************/
 
 	template<typename T, typename U>
 	struct IsSame : FalseType {	};
@@ -82,14 +83,29 @@ namespace TT {
 	template<typename T, typename U>
 	constexpr bool IsSame_v = IsSame<T, U>::value;
 
-	template<typename T>
-	struct IsInteger : FalseType {};
 
-	template<>
-	struct IsInteger<int> : TrueType {};
-	
+	/***********************************************/
+
+	using Nullptr_t = decltype(nullptr);
+
+	template<typename T>
+	struct IsInteger : IsSame<RemoveCV_t<T>, int> {};
 	template<typename T>
 	constexpr bool IsInteger_v = IsInteger<T>::value;
+
+
+	template<typename T>
+	struct IsVoid : IsSame<RemoveCV_t<T>, void> {};
+	template<typename T>
+	constexpr bool IsVoid_v = IsVoid<T>::value;
+
+
+	template<typename T>
+	struct IsNullptr : IsSame<RemoveCV_T<T>, NullPtr_t> {};
+	template<typename T>
+	constexpr bool IsNullptr_v = IsNullptr<T>::value;
+
+
 
 }
 
